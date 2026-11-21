@@ -11,6 +11,7 @@ struct FeatureCarouselItem: Identifiable {
 
 public struct FeatureCarouselView: View {
     @State private var currentPage = 0
+    private let timer = Timer.publish(every: 2.0, on: .main, in: .common).autoconnect()
 
     private let features = [
         FeatureCarouselItem(
@@ -95,6 +96,11 @@ public struct FeatureCarouselView: View {
             }
             .frame(height: 200)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .onReceive(timer) { _ in
+                withAnimation(.easeInOut(duration: 0.8)) {
+                    currentPage = (currentPage + 1) % features.count
+                }
+            }
 
             // Indicator Dots
             HStack(spacing: 6) {

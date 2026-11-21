@@ -172,15 +172,31 @@ public struct ActiveTripView: View {
                 .padding(.vertical, 12)
                 .background(Color(red: 0.06, green: 0.09, blue: 0.16))
             }
+
+            // Direct Full-Screen Alarm Overlay over Active Trip Screen
+            if locationManager.shouldRingAlarm {
+                AlarmRingView(
+                    placeName: locationManager.ringingAlarm?.placeName ?? (locationManager.destinationName.isEmpty ? "Destination Stop" : locationManager.destinationName),
+                    radiusMeters: locationManager.ringingAlarm?.radiusMeters ?? locationManager.radiusMeters,
+                    snoozeMinutes: SettingsRepository.shared.settings.defaultSnoozeMinutes,
+                    onStop: {
+                        AlarmSoundPlayer.shared.stop()
+                        locationManager.shouldRingAlarm = false
+                        onTripCompleted()
+                    },
+                    onSnooze: {
+                        AlarmSoundPlayer.shared.stop()
+                        locationManager.shouldRingAlarm = false
+                        onTripCompleted()
+                    }
+                )
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .zIndex(999)
+            }
         }
         .onAppear {
             withAnimation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: false)) {
                 animatePulse = true
-            }
-        }
-        .onChange(of: locationManager.isCompleted) { completed in
-            if completed {
-                onTripCompleted()
             }
         }
     }
