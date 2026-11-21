@@ -90,8 +90,7 @@ public struct MainTabView: View {
                         showActiveTrip = false
                     },
                     onSnooze: {
-                        AlarmSoundPlayer.shared.stop()
-                        locationManager.shouldRingAlarm = false
+                        locationManager.scheduleSnooze(minutes: SettingsRepository.shared.settings.defaultSnoozeMinutes)
                         showActiveTrip = false
                     }
                 )

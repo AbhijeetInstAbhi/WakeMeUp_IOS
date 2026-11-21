@@ -29,6 +29,8 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
     @Published public var shouldRingAlarm: Bool = false
     @Published public var ringingAlarm: TravelAlarm?
 
+    private var autoSilenceTimer: Timer?
+
     private override init() {
         super.init()
         locationManager.delegate = self
@@ -84,6 +86,8 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
         self.initialDistance = 0.0
         self.radiusMeters = 0
         self.isCompleted = false
+        self.autoSilenceTimer?.invalidate()
+        self.autoSilenceTimer = nil
 
         for region in locationManager.monitoredRegions {
             locationManager.stopMonitoring(for: region)
@@ -112,12 +116,53 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
             vibrate: SettingsRepository.shared.settings.vibrate,
             loud: SettingsRepository.shared.settings.loudAlarm
         )
+
+        let autoSilenceMins = SettingsRepository.shared.settings.autoSilenceMinutes
+        if autoSilenceMins > 0 {
+            autoSilenceTimer?.invalidate()
+            autoSilenceTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(autoSilenceMins * 60), repeats: false) { [weak self] _ in
+                DispatchQueue.main.async {
+                    if self?.shouldRingAlarm == true {
+                        AlarmSoundPlayer.shared.stop()
+                        self?.shouldRingAlarm = false
+                    }
+                }
+            }
+        }
+    }
+
+    public func scheduleSnooze(minutes: Int) {
+        AlarmSoundPlayer.shared.stop()
+        self.shouldRingAlarm = false
+
+        let content = UNMutableNotificationContent()
+        content.title = "⏰ SNOOZE EXPIRED - WAKE UP!"
+        content.body = "You are near \(destinationName.isEmpty ? "your destination" : destinationName). Tap to stop alarm."
+        content.sound = UNNotificationSound.defaultCritical
+        content.categoryIdentifier = "ALARM_CATEGORY"
+
+        let delaySecs = TimeInterval(max(1, minutes * 60))
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delaySecs, repeats: false)
+        let request = UNNotificationRequest(identifier: "WAKEMEUP_SNOOZE_\(Date().timeIntervalSince1970)", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request)
+
+        Timer.scheduledTimer(withTimeInterval: delaySecs, repeats: false) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.shouldRingAlarm = true
+                self?.sendLocalNotification()
+                AlarmSoundPlayer.shared.start(
+                    vibrate: SettingsRepository.shared.settings.vibrate,
+                    loud: SettingsRepository.shared.settings.loudAlarm
+                )
+            }
+        }
     }
 
     private func sendLocalNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Wake Up!"
-        content.body = "You are near \(destinationName)"
+        content.title = "⏰ WAKE UP!"
+        content.body = "You are within radius of \(destinationName.isEmpty ? "your destination" : destinationName)! Tap to view alarm."
         content.sound = UNNotificationSound.defaultCritical
         content.categoryIdentifier = "ALARM_CATEGORY"
 
@@ -144,6 +189,10 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
     ) {
         DispatchQueue.main.async {
             self.shouldRingAlarm = true
+            AlarmSoundPlayer.shared.start(
+                vibrate: SettingsRepository.shared.settings.vibrate,
+                loud: SettingsRepository.shared.settings.loudAlarm
+            )
         }
         completionHandler()
     }
@@ -166,7 +215,7 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
             self.currentLat = location.coordinate.latitude
             self.currentLng = location.coordinate.longitude
 
-            if self.isTracking && self.destinationLat != 0.0 && self.destinationLng != 0.0 {
+            if self.isTracking && !self.isCompleted && self.destinationLat != 0.0 && self.destinationLng != 0.0 {
                 let dist = location.distance(from: CLLocation(latitude: self.destinationLat, longitude: self.destinationLng))
                 self.remainingDistance = dist
 

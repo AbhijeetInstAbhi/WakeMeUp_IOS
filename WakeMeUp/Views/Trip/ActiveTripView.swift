@@ -185,8 +185,7 @@ public struct ActiveTripView: View {
                         onTripCompleted()
                     },
                     onSnooze: {
-                        AlarmSoundPlayer.shared.stop()
-                        locationManager.shouldRingAlarm = false
+                        locationManager.scheduleSnooze(minutes: SettingsRepository.shared.settings.defaultSnoozeMinutes)
                         onTripCompleted()
                     }
                 )
