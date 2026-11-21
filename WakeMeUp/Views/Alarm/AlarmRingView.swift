@@ -12,10 +12,15 @@ public struct AlarmRingView: View {
     public var body: some View {
         ZStack {
             LinearGradient(
-                colors: [Color(red: 0.04, green: 0.04, blue: 0.08), Color(red: 0.09, green: 0.07, blue: 0.21), Color(red: 0.04, green: 0.04, blue: 0.08)],
+                colors: [
+                    Color(red: 0.043, green: 0.043, blue: 0.078),
+                    Color(red: 0.090, green: 0.071, blue: 0.208),
+                    Color(red: 0.043, green: 0.043, blue: 0.078)
+                ],
                 startPoint: .top,
                 endPoint: .bottom
-            ).ignoresSafeArea()
+            )
+            .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 Spacer().frame(height: 48)
@@ -27,11 +32,12 @@ public struct AlarmRingView: View {
                 Text("You are near your stop")
                     .font(.system(size: 18))
                     .foregroundColor(Color.white.opacity(0.85))
+                    .multilineTextAlignment(.center)
                     .padding(.top, 12)
 
                 Text(placeName)
                     .font(.system(size: 22, weight: .bold))
-                    .foregroundColor(Color(red: 0.39, green: 0.40, blue: 0.95))
+                    .foregroundColor(Color(red: 0.22, green: 0.74, blue: 0.97)) // ElectricBlue #38BDF8
                     .padding(.top, 4)
 
                 if radiusMeters > 0 {
@@ -43,15 +49,16 @@ public struct AlarmRingView: View {
 
                 Spacer()
 
+                // Pulsing Radar Center
                 ZStack {
                     Circle()
-                        .fill(Color(red: 0.39, green: 0.40, blue: 0.95).opacity(0.18))
+                        .fill(Color(red: 0.22, green: 0.74, blue: 0.97).opacity(0.18))
                         .frame(width: 180, height: 180)
                         .scaleEffect(pulseScale)
 
                     ZStack {
                         Circle()
-                            .fill(Color(red: 0.39, green: 0.40, blue: 0.95))
+                            .fill(Color(red: 0.22, green: 0.74, blue: 0.97)) // ElectricBlue
                             .frame(width: 120, height: 120)
 
                         Image(systemName: "bell.badge.fill")
@@ -62,14 +69,14 @@ public struct AlarmRingView: View {
 
                 Spacer()
 
-                VStack(spacing: 12) {
+                VStack(spacing: 10) {
                     Button(action: onStop) {
                         Text("Stop Alarm")
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .frame(height: 56)
-                            .background(Color(red: 0.39, green: 0.40, blue: 0.95))
+                            .background(Color(red: 0.22, green: 0.74, blue: 0.97))
                             .cornerRadius(16)
                     }
 

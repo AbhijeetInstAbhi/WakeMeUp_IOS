@@ -3,7 +3,7 @@ import CoreLocation
 import Combine
 import UserNotifications
 
-public class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+public class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     public static let shared = LocationManager()
 
     private let locationManager = CLLocationManager()
@@ -33,10 +33,11 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = 2.0 // 2 meters update
+        locationManager.distanceFilter = 2.0
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
 
+        UNUserNotificationCenter.current().delegate = self
         requestPermissions()
     }
 
@@ -124,6 +125,27 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
         let request = UNNotificationRequest(identifier: "WAKEMEUP_ALARM", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request)
+    }
+
+    // MARK: - UNUserNotificationCenterDelegate
+
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        completionHandler([.banner, .sound, .badge, .list])
+    }
+
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        DispatchQueue.main.async {
+            self.shouldRingAlarm = true
+        }
+        completionHandler()
     }
 
     // MARK: - CLLocationManagerDelegate
