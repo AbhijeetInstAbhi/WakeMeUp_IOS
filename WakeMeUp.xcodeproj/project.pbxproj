@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1010000000000000000044C /* WakeMeUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000064 /* WakeMeUpApp.swift */; };
+		A1010000000000000000044E /* Models/TransportMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000066 /* Models/TransportMode.swift */; };
+		A1010000000000000000044F /* Models/TravelAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000067 /* Models/TravelAlarm.swift */; };
+		A10100000000000000000450 /* Models/PlaceSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000068 /* Models/PlaceSuggestion.swift */; };
+		A10100000000000000000451 /* Models/PopularSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000069 /* Models/PopularSearch.swift */; };
+		A10100000000000000000452 /* Models/AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000006A /* Models/AppSettings.swift */; };
+		A10100000000000000000453 /* Utilities/GeoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000006B /* Utilities/GeoUtils.swift */; };
+		A10100000000000000000454 /* Services/SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000006C /* Services/SettingsRepository.swift */; };
+		A10100000000000000000455 /* Services/AlarmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000006D /* Services/AlarmRepository.swift */; };
+		A10100000000000000000456 /* Services/LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000006E /* Services/LocationManager.swift */; };
+		A10100000000000000000457 /* Services/PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000006F /* Services/PlaceRepository.swift */; };
+		A10100000000000000000458 /* Services/AlarmSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000070 /* Services/AlarmSoundPlayer.swift */; };
+		A10100000000000000000459 /* Views/Components/AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000071 /* Views/Components/AppLogoView.swift */; };
+		A1010000000000000000045A /* Views/Components/PermissionBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000072 /* Views/Components/PermissionBannerView.swift */; };
+		A1010000000000000000045B /* Views/Splash/SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000073 /* Views/Splash/SplashScreenView.swift */; };
+		A1010000000000000000045C /* Views/Onboarding/OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000074 /* Views/Onboarding/OnboardingView.swift */; };
+		A1010000000000000000045D /* Views/Home/HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000075 /* Views/Home/HomeView.swift */; };
+		A1010000000000000000045E /* Views/Home/HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000076 /* Views/Home/HomeViewModel.swift */; };
+		A1010000000000000000045F /* Views/Home/Components/NextAlarmCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000077 /* Views/Home/Components/NextAlarmCardView.swift */; };
+		A10100000000000000000460 /* Views/Home/Components/FeatureCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000078 /* Views/Home/Components/FeatureCarouselView.swift */; };
+		A10100000000000000000461 /* Views/Create/CreateAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000079 /* Views/Create/CreateAlarmView.swift */; };
+		A10100000000000000000462 /* Views/Create/CreateAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000007A /* Views/Create/CreateAlarmViewModel.swift */; };
+		A10100000000000000000463 /* Views/Create/MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000007B /* Views/Create/MapRouteView.swift */; };
+		A10100000000000000000464 /* Views/Create/Steps/SearchStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000007C /* Views/Create/Steps/SearchStepView.swift */; };
+		A10100000000000000000465 /* Views/Create/Steps/MapStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000007D /* Views/Create/Steps/MapStepView.swift */; };
+		A10100000000000000000466 /* Views/Create/Steps/RadiusStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000007E /* Views/Create/Steps/RadiusStepView.swift */; };
+		A10100000000000000000467 /* Views/Create/Steps/ReviewStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000007F /* Views/Create/Steps/ReviewStepView.swift */; };
+		A10100000000000000000468 /* Views/Trip/ActiveTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000080 /* Views/Trip/ActiveTripView.swift */; };
+		A10100000000000000000469 /* Views/Trip/ActiveTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000081 /* Views/Trip/ActiveTripViewModel.swift */; };
+		A1010000000000000000046A /* Views/Trip/TripCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000082 /* Views/Trip/TripCompletedView.swift */; };
+		A1010000000000000000046B /* Views/Alarm/AlarmRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000083 /* Views/Alarm/AlarmRingView.swift */; };
+		A1010000000000000000046C /* Views/History/HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000084 /* Views/History/HistoryView.swift */; };
+		A1010000000000000000046D /* Views/History/HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000085 /* Views/History/HistoryViewModel.swift */; };
+		A1010000000000000000046E /* Views/Settings/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000086 /* Views/Settings/SettingsView.swift */; };
+		A1010000000000000000046F /* Views/Settings/SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000087 /* Views/Settings/SettingsViewModel.swift */; };
+		A10100000000000000000470 /* Views/Settings/SosConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000088 /* Views/Settings/SosConfigView.swift */; };
+		A10100000000000000000471 /* Views/Settings/FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10100000000000000000089 /* Views/Settings/FeedbackView.swift */; };
+		A10100000000000000000472 /* Views/Main/MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000008A /* Views/Main/MainTabView.swift */; };
+		A10100000000000000000473 /* Resources/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1010000000000000000008B /* Resources/Assets.xcassets */; };
+		A101000000000000000005DC /* WakeMeUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101000000000000000001F4 /* WakeMeUpTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1010000000000000000003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1010000000000000000001E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1010000000000000000000A;
+			remoteInfo = WakeMeUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A10100000000000000000014 /* WakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10100000000000000000015 /* WakeMeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeMeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10100000000000000000064 /* WakeMeUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeMeUpApp.swift; sourceTree = "<group>"; };
+		A10100000000000000000065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10100000000000000000066 /* Models/TransportMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/TransportMode.swift; sourceTree = "<group>"; };
+		A10100000000000000000067 /* Models/TravelAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/TravelAlarm.swift; sourceTree = "<group>"; };
+		A10100000000000000000068 /* Models/PlaceSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PlaceSuggestion.swift; sourceTree = "<group>"; };
+		A10100000000000000000069 /* Models/PopularSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PopularSearch.swift; sourceTree = "<group>"; };
+		A1010000000000000000006A /* Models/AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/AppSettings.swift; sourceTree = "<group>"; };
+		A1010000000000000000006B /* Utilities/GeoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities/GeoUtils.swift; sourceTree = "<group>"; };
+		A1010000000000000000006C /* Services/SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/SettingsRepository.swift; sourceTree = "<group>"; };
+		A1010000000000000000006D /* Services/AlarmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/AlarmRepository.swift; sourceTree = "<group>"; };
+		A1010000000000000000006E /* Services/LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/LocationManager.swift; sourceTree = "<group>"; };
+		A1010000000000000000006F /* Services/PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/PlaceRepository.swift; sourceTree = "<group>"; };
+		A10100000000000000000070 /* Services/AlarmSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/AlarmSoundPlayer.swift; sourceTree = "<group>"; };
+		A10100000000000000000071 /* Views/Components/AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/AppLogoView.swift; sourceTree = "<group>"; };
+		A10100000000000000000072 /* Views/Components/PermissionBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/PermissionBannerView.swift; sourceTree = "<group>"; };
+		A10100000000000000000073 /* Views/Splash/SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Splash/SplashScreenView.swift; sourceTree = "<group>"; };
+		A10100000000000000000074 /* Views/Onboarding/OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
+		A10100000000000000000075 /* Views/Home/HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Home/HomeView.swift; sourceTree = "<group>"; };
+		A10100000000000000000076 /* Views/Home/HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Home/HomeViewModel.swift; sourceTree = "<group>"; };
+		A10100000000000000000077 /* Views/Home/Components/NextAlarmCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Home/Components/NextAlarmCardView.swift; sourceTree = "<group>"; };
+		A10100000000000000000078 /* Views/Home/Components/FeatureCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Home/Components/FeatureCarouselView.swift; sourceTree = "<group>"; };
+		A10100000000000000000079 /* Views/Create/CreateAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/CreateAlarmView.swift; sourceTree = "<group>"; };
+		A1010000000000000000007A /* Views/Create/CreateAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/CreateAlarmViewModel.swift; sourceTree = "<group>"; };
+		A1010000000000000000007B /* Views/Create/MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/MapRouteView.swift; sourceTree = "<group>"; };
+		A1010000000000000000007C /* Views/Create/Steps/SearchStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/Steps/SearchStepView.swift; sourceTree = "<group>"; };
+		A1010000000000000000007D /* Views/Create/Steps/MapStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/Steps/MapStepView.swift; sourceTree = "<group>"; };
+		A1010000000000000000007E /* Views/Create/Steps/RadiusStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/Steps/RadiusStepView.swift; sourceTree = "<group>"; };
+		A1010000000000000000007F /* Views/Create/Steps/ReviewStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Create/Steps/ReviewStepView.swift; sourceTree = "<group>"; };
+		A10100000000000000000080 /* Views/Trip/ActiveTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Trip/ActiveTripView.swift; sourceTree = "<group>"; };
+		A10100000000000000000081 /* Views/Trip/ActiveTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Trip/ActiveTripViewModel.swift; sourceTree = "<group>"; };
+		A10100000000000000000082 /* Views/Trip/TripCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Trip/TripCompletedView.swift; sourceTree = "<group>"; };
+		A10100000000000000000083 /* Views/Alarm/AlarmRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Alarm/AlarmRingView.swift; sourceTree = "<group>"; };
+		A10100000000000000000084 /* Views/History/HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/History/HistoryView.swift; sourceTree = "<group>"; };
+		A10100000000000000000085 /* Views/History/HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/History/HistoryViewModel.swift; sourceTree = "<group>"; };
+		A10100000000000000000086 /* Views/Settings/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		A10100000000000000000087 /* Views/Settings/SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Settings/SettingsViewModel.swift; sourceTree = "<group>"; };
+		A10100000000000000000088 /* Views/Settings/SosConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Settings/SosConfigView.swift; sourceTree = "<group>"; };
+		A10100000000000000000089 /* Views/Settings/FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Settings/FeedbackView.swift; sourceTree = "<group>"; };
+		A1010000000000000000008A /* Views/Main/MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Main/MainTabView.swift; sourceTree = "<group>"; };
+		A1010000000000000000008B /* Resources/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		A101000000000000000001F4 /* WakeMeUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeMeUpTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1010000000000000000002A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10100000000000000000033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10100000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A10100000000000000000002 /* WakeMeUp */,
+				A10100000000000000000008 /* WakeMeUpTests */,
+				A10100000000000000000007 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10100000000000000000002 /* WakeMeUp */ = {
+			isa = PBXGroup;
+			children = (
+				A10100000000000000000064 /* WakeMeUpApp.swift */,
+				A10100000000000000000065 /* Info.plist */,
+				A10100000000000000000003 /* Models */,
+				A10100000000000000000004 /* Utilities */,
+				A10100000000000000000005 /* Services */,
+				A10100000000000000000006 /* Views */,
+				A1010000000000000000008B /* Resources/Assets.xcassets */,
+			);
+			path = WakeMeUp;
+			sourceTree = "<group>";
+		};
+		A10100000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10100000000000000000066 /* Models/TransportMode.swift */,
+				A10100000000000000000067 /* Models/TravelAlarm.swift */,
+				A10100000000000000000068 /* Models/PlaceSuggestion.swift */,
+				A10100000000000000000069 /* Models/PopularSearch.swift */,
+				A1010000000000000000006A /* Models/AppSettings.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A10100000000000000000004 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A1010000000000000000006B /* Utilities/GeoUtils.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		A10100000000000000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1010000000000000000006C /* Services/SettingsRepository.swift */,
+				A1010000000000000000006D /* Services/AlarmRepository.swift */,
+				A1010000000000000000006E /* Services/LocationManager.swift */,
+				A1010000000000000000006F /* Services/PlaceRepository.swift */,
+				A10100000000000000000070 /* Services/AlarmSoundPlayer.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A10100000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10100000000000000000071 /* Views/Components/AppLogoView.swift */,
+				A10100000000000000000072 /* Views/Components/PermissionBannerView.swift */,
+				A10100000000000000000073 /* Views/Splash/SplashScreenView.swift */,
+				A10100000000000000000074 /* Views/Onboarding/OnboardingView.swift */,
+				A10100000000000000000075 /* Views/Home/HomeView.swift */,
+				A10100000000000000000076 /* Views/Home/HomeViewModel.swift */,
+				A10100000000000000000077 /* Views/Home/Components/NextAlarmCardView.swift */,
+				A10100000000000000000078 /* Views/Home/Components/FeatureCarouselView.swift */,
+				A10100000000000000000079 /* Views/Create/CreateAlarmView.swift */,
+				A1010000000000000000007A /* Views/Create/CreateAlarmViewModel.swift */,
+				A1010000000000000000007B /* Views/Create/MapRouteView.swift */,
+				A1010000000000000000007C /* Views/Create/Steps/SearchStepView.swift */,
+				A1010000000000000000007D /* Views/Create/Steps/MapStepView.swift */,
+				A1010000000000000000007E /* Views/Create/Steps/RadiusStepView.swift */,
+				A1010000000000000000007F /* Views/Create/Steps/ReviewStepView.swift */,
+				A10100000000000000000080 /* Views/Trip/ActiveTripView.swift */,
+				A10100000000000000000081 /* Views/Trip/ActiveTripViewModel.swift */,
+				A10100000000000000000082 /* Views/Trip/TripCompletedView.swift */,
+				A10100000000000000000083 /* Views/Alarm/AlarmRingView.swift */,
+				A10100000000000000000084 /* Views/History/HistoryView.swift */,
+				A10100000000000000000085 /* Views/History/HistoryViewModel.swift */,
+				A10100000000000000000086 /* Views/Settings/SettingsView.swift */,
+				A10100000000000000000087 /* Views/Settings/SettingsViewModel.swift */,
+				A10100000000000000000088 /* Views/Settings/SosConfigView.swift */,
+				A10100000000000000000089 /* Views/Settings/FeedbackView.swift */,
+				A1010000000000000000008A /* Views/Main/MainTabView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A10100000000000000000007 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10100000000000000000014 /* WakeMeUp.app */,
+				A10100000000000000000015 /* WakeMeUpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A10100000000000000000008 /* WakeMeUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				A101000000000000000001F4 /* WakeMeUpTests.swift */,
+			);
+			path = WakeMeUpTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1010000000000000000000A /* WakeMeUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10100000000000000000050 /* Build configuration list for PBXNativeTarget "WakeMeUp" */;
+			buildPhases = (
+				A10100000000000000000028 /* Sources */,
+				A1010000000000000000002A /* Frameworks */,
+				A10100000000000000000029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WakeMeUp;
+			productName = WakeMeUp;
+			productReference = A10100000000000000000014 /* WakeMeUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1010000000000000000000B /* WakeMeUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10100000000000000000051 /* Build configuration list for PBXNativeTarget "WakeMeUpTests" */;
+			buildPhases = (
+				A10100000000000000000032 /* Sources */,
+				A10100000000000000000033 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1010000000000000000003D /* PBXTargetDependency */,
+			);
+			name = WakeMeUpTests;
+			productName = WakeMeUpTests;
+			productReference = A10100000000000000000015 /* WakeMeUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1010000000000000000001E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A1010000000000000000000A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A1010000000000000000000B = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A10100000000000000000052 /* Build configuration list for PBXProject "WakeMeUp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10100000000000000000001;
+			productRefGroup = A10100000000000000000007 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1010000000000000000000A /* WakeMeUp */,
+				A1010000000000000000000B /* WakeMeUpTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10100000000000000000029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10100000000000000000473 /* Resources/Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10100000000000000000028 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1010000000000000000044C /* WakeMeUpApp.swift in Sources */,
+				A1010000000000000000044E /* Models/TransportMode.swift in Sources */,
+				A1010000000000000000044F /* Models/TravelAlarm.swift in Sources */,
+				A10100000000000000000450 /* Models/PlaceSuggestion.swift in Sources */,
+				A10100000000000000000451 /* Models/PopularSearch.swift in Sources */,
+				A10100000000000000000452 /* Models/AppSettings.swift in Sources */,
+				A10100000000000000000453 /* Utilities/GeoUtils.swift in Sources */,
+				A10100000000000000000454 /* Services/SettingsRepository.swift in Sources */,
+				A10100000000000000000455 /* Services/AlarmRepository.swift in Sources */,
+				A10100000000000000000456 /* Services/LocationManager.swift in Sources */,
+				A10100000000000000000457 /* Services/PlaceRepository.swift in Sources */,
+				A10100000000000000000458 /* Services/AlarmSoundPlayer.swift in Sources */,
+				A10100000000000000000459 /* Views/Components/AppLogoView.swift in Sources */,
+				A1010000000000000000045A /* Views/Components/PermissionBannerView.swift in Sources */,
+				A1010000000000000000045B /* Views/Splash/SplashScreenView.swift in Sources */,
+				A1010000000000000000045C /* Views/Onboarding/OnboardingView.swift in Sources */,
+				A1010000000000000000045D /* Views/Home/HomeView.swift in Sources */,
+				A1010000000000000000045E /* Views/Home/HomeViewModel.swift in Sources */,
+				A1010000000000000000045F /* Views/Home/Components/NextAlarmCardView.swift in Sources */,
+				A10100000000000000000460 /* Views/Home/Components/FeatureCarouselView.swift in Sources */,
+				A10100000000000000000461 /* Views/Create/CreateAlarmView.swift in Sources */,
+				A10100000000000000000462 /* Views/Create/CreateAlarmViewModel.swift in Sources */,
+				A10100000000000000000463 /* Views/Create/MapRouteView.swift in Sources */,
+				A10100000000000000000464 /* Views/Create/Steps/SearchStepView.swift in Sources */,
+				A10100000000000000000465 /* Views/Create/Steps/MapStepView.swift in Sources */,
+				A10100000000000000000466 /* Views/Create/Steps/RadiusStepView.swift in Sources */,
+				A10100000000000000000467 /* Views/Create/Steps/ReviewStepView.swift in Sources */,
+				A10100000000000000000468 /* Views/Trip/ActiveTripView.swift in Sources */,
+				A10100000000000000000469 /* Views/Trip/ActiveTripViewModel.swift in Sources */,
+				A1010000000000000000046A /* Views/Trip/TripCompletedView.swift in Sources */,
+				A1010000000000000000046B /* Views/Alarm/AlarmRingView.swift in Sources */,
+				A1010000000000000000046C /* Views/History/HistoryView.swift in Sources */,
+				A1010000000000000000046D /* Views/History/HistoryViewModel.swift in Sources */,
+				A1010000000000000000046E /* Views/Settings/SettingsView.swift in Sources */,
+				A1010000000000000000046F /* Views/Settings/SettingsViewModel.swift in Sources */,
+				A10100000000000000000470 /* Views/Settings/SosConfigView.swift in Sources */,
+				A10100000000000000000471 /* Views/Settings/FeedbackView.swift in Sources */,
+				A10100000000000000000472 /* Views/Main/MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10100000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A101000000000000000005DC /* WakeMeUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1010000000000000000003D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1010000000000000000000A /* WakeMeUp */;
+			targetProxy = A1010000000000000000003C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A10100000000000000000046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R74Q774R9N;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WakeMeUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhijeet.wakemeup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A10100000000000000000047 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R74Q774R9N;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WakeMeUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhijeet.wakemeup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A10100000000000000000048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhijeet.wakemeupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WakeMeUp.app/WakeMeUp";
+			};
+			name = Debug;
+		};
+		A10100000000000000000049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhijeet.wakemeupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WakeMeUp.app/WakeMeUp";
+			};
+			name = Release;
+		};
+		A1010000000000000000004A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1010000000000000000004B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10100000000000000000050 /* Build configuration list for PBXNativeTarget "WakeMeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10100000000000000000046 /* Debug */,
+				A10100000000000000000047 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10100000000000000000051 /* Build configuration list for PBXNativeTarget "WakeMeUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10100000000000000000048 /* Debug */,
+				A10100000000000000000049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10100000000000000000052 /* Build configuration list for PBXProject "WakeMeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1010000000000000000004A /* Debug */,
+				A1010000000000000000004B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1010000000000000000001E /* Project object */;
+}
